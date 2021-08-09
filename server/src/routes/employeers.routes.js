@@ -9,6 +9,7 @@ router.post('/', employeesCtrl.createEmployee);
 router.get('/', employeesCtrl.getEmployee);
 router.put('/', employeesCtrl.editEmployee);
 router.delete('/', employeesCtrl.deleteEmployee);
+router.post('/contacto', employeesCtrl.createContacto);
 
 
 module.exports = router;
