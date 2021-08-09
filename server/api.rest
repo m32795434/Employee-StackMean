@@ -14,5 +14,11 @@ GET  http://localhost:3000/api/employees/
 ###
 DELETE http://localhost:3000/api/employees/6111ad99b112502cc80f85fa
 
+###
+PUT http://localhost:3000/api/employees/6111b3b9babc5521641ade1e
+Content-Type: application/json
 
+{
+    "salary": "200000"
+}
 
