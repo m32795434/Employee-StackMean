@@ -17,7 +17,12 @@ const Fcontacto = require('../models/Fcontacto')
         res.send(employee)
     }
     employeeCtrl.editEmployee = (req, res)=> {}
-    employeeCtrl.deleteEmployee = (req, res)=> {}
+
+    employeeCtrl.deleteEmployee = async (req, res)=> {
+        await Employee.findByIdAndDelete(req.params.id)
+        res.json({status:"Employee deleted"})
+    }
+
     employeeCtrl.createContacto = (req, res)=> {
         res.send("create contacto");
     }

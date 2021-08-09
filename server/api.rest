@@ -11,5 +11,8 @@ Content-Type: application/json
 ###
 GET  http://localhost:3000/api/employees/
 
+###
+DELETE http://localhost:3000/api/employees/6111ad99b112502cc80f85fa
+
 
 
