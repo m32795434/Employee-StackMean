@@ -9,9 +9,10 @@ const Fcontacto = require('../models/Fcontacto')
     employeeCtrl.getEmployee = (req, res)=> {
         
     }
-    employeeCtrl.createEmployee = (req, res)=> {
-        console.log(req.body)
-        res.send("create employees");
+    employeeCtrl.createEmployee = async (req, res)=> {
+        const newEmployee = new Employee(req.body)
+        await newEmployee.save()
+        res.send("Employee created");
     }
     employeeCtrl.editEmployee = (req, res)=> {}
     employeeCtrl.deleteEmployee = (req, res)=> {}
