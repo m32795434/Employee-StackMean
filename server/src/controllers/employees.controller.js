@@ -1,13 +1,16 @@
 const employeeCtrl = {}
 const Employee = require('../models/Employee')
+const Fcontacto = require('../models/Fcontacto')
 
-    employeeCtrl.getEmployees = (req, res)=> {
-        res.send("get employees");
+    employeeCtrl.getEmployees = async (req, res)=> {
+      const employees =  await Employee.find()
+      res.json(employees)
     }
     employeeCtrl.getEmployee = (req, res)=> {
         
     }
     employeeCtrl.createEmployee = (req, res)=> {
+        console.log(req.body)
         res.send("create employees");
     }
     employeeCtrl.editEmployee = (req, res)=> {}
