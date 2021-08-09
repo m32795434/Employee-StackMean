@@ -1,7 +1,10 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 mongoose
-.conect('mongodb://localhost/mean-employees')
-.then((db)=>console.log('db is conceted'))
+.connect("mongodb://localhost/mean-employees",{
+useUnifiedTopology: true,
+useNewUrlParser: true
+})
+.then((db)=>console.log('db is connected'))
 .catch((err)=>console.error(err));
     
