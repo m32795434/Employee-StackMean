@@ -9,7 +9,7 @@ Content-Type: application/json
     "salary": "100000"
 }
 ###
-GET  http://localhost:3000/api/employees
+GET  http://localhost:3000/api/employees/
 
 
 

@@ -6,13 +6,15 @@ const Fcontacto = require('../models/Fcontacto')
       const employees =  await Employee.find()
       res.json(employees)
     }
-    employeeCtrl.getEmployee = (req, res)=> {
-        
-    }
+    
     employeeCtrl.createEmployee = async (req, res)=> {
         const newEmployee = new Employee(req.body)
         await newEmployee.save()
         res.send("Employee created");
+    }
+    employeeCtrl.getEmployee = async (req, res)=> {
+        const employee = await Employee.findById(req.params.id)
+        res.send(employee)
     }
     employeeCtrl.editEmployee = (req, res)=> {}
     employeeCtrl.deleteEmployee = (req, res)=> {}
