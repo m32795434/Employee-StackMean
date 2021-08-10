@@ -1,6 +1,6 @@
 const employeeCtrl = {}
 const Employee = require('../models/Employee')
-const Fcontacto = require('../models/Fcontacto')
+// const Fcontacto = require('../models/Fcontacto')
 
     employeeCtrl.getEmployees = async (req, res)=> {
       const employees =  await Employee.find()
@@ -26,8 +26,5 @@ const Fcontacto = require('../models/Fcontacto')
         res.json({status:"Employee deleted"})
     }
 
-    employeeCtrl.createContacto = (req, res)=> {
-        res.send("create contacto");
-    }
 
 module.exports = employeeCtrl;

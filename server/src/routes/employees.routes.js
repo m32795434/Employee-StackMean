@@ -9,7 +9,7 @@ router.post('/', employeesCtrl.createEmployee);
 router.get('/:id', employeesCtrl.getEmployee);
 router.put('/:id', employeesCtrl.editEmployee);
 router.delete('/:id', employeesCtrl.deleteEmployee);
-router.post('/contacto', employeesCtrl.createContacto);
+// router.post('/contacto', employeesCtrl.createContacto);
 
 
 module.exports = router;

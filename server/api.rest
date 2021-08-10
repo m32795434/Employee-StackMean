@@ -19,6 +19,22 @@ PUT http://localhost:3000/api/employees/6111b3b9babc5521641ade1e
 Content-Type: application/json
 
 {
-    "salary": "200000"
+    "name": "Manuel Aubustus"
 }
 
+# -----------------CONTACTO-------------------
+###
+POST  http://localhost:3000/api/contacto
+Content-Type: application/json
+
+{
+    "nombre": "Carolina Herrera",
+    "email": "developer@gmail.com",
+    "edad":"27",
+    "pais": "Uruguay",
+    "comentario":"Hola quiero mas info!+5493454093473"
+}
+###
+GET  http://localhost:3000/api/contacto
+
+###
