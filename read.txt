@@ -1,4 +1,3 @@
-debo correjir importar database con mogoose con js
 video
 https://www.youtube.com/watch?v=qf8-JzU-4IE&t=2252s
 min 39.18
