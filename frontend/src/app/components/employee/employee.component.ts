@@ -7,7 +7,6 @@ import {EmployeeService} from '../../services/employee.service';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-
   //INSTANTIATE THE SERVICE
   constructor(private employeService: EmployeeService) { }
 
