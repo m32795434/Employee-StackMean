@@ -8,13 +8,19 @@ import {EmployeeService} from '../../services/employee.service';
 })
 export class EmployeeComponent implements OnInit {
   //INSTANTIATE THE SERVICE
-  constructor(private employeService: EmployeeService) { }
+  constructor(public employeeService: EmployeeService) { }
 
   ngOnInit(): void {
-    this.employeService.getEmployees().subscribe(
-      res => console.log(res),
+    this.getEmployees();
+  }
+  
+  getEmployees() {
+    this.employeeService.getEmployees().subscribe(
+      res => {
+        this.employeeService.employees = res as [];
+      },
       err => console.error(err)
     )
   }
-
 }
+ 

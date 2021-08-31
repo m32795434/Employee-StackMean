@@ -17,7 +17,9 @@ export class EmployeeService {
   
   
   getEmployees() {
-   return this.http.get(this.URL_API);
+    //or we can use "res as []" in the subscribe of employee.component. We are using both, but's not necesary. 
+   //return all the employees inside the array. "Get" method on /api/employees.
+    return this.http.get<Employee[]>(this.URL_API);
    
   }
 }
