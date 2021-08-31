@@ -1,15 +1,20 @@
+# Extensión de visualcode. Podríamos haber usado Postman, insomia...
 ###
 POST  http://localhost:3000/api/employees
 Content-Type: application/json
 
 {
-    "name": "John Doe",
-    "position": "developer",
-    "office":"rome",
-    "salary": "100000"
+    "name": "Marc Tony",
+    "position": "Jr. developer",
+    "office":"RSS",
+    "salary": "1000"
 }
 ###
 GET  http://localhost:3000/api/employees/
+
+###
+GET  http://localhost:3000/api/employees/6111b385babc5521641ade1a
+
 
 ###
 DELETE http://localhost:3000/api/employees/6111ad99b112502cc80f85fa
@@ -28,10 +33,10 @@ POST  http://localhost:3000/api/contacto
 Content-Type: application/json
 
 {
-    "nombre": "Carolina Herrera",
-    "email": "developer@gmail.com",
-    "edad":"27",
-    "pais": "Uruguay",
+    "nombre":"Juana De Arco",
+    "email": "crazydev@gmail.com",
+    "edad":"270",
+    "pais": "Norway",
     "comentario":"Hola quiero mas info!+5493454093473"
 }
 ###
