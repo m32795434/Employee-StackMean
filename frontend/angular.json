@@ -27,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css","node_modules/bootswatch/dist/materia/bootstrap.min.css"
             ],
             "scripts": []
           },
