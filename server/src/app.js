@@ -2,12 +2,16 @@
 const express = require('express'); 
 // middelware. ver peticiones http que van llegando al server. ej:GET /404 0.261 ms - 139
 const morgan = require('morgan');
+//to accept requests from other origins.
+const cors = require('cors');
 
 
 const app = express();
 // process.env.PORT: si en el sistema Op hay un puerto definido para esta app, lo usa, si no, usa el 3000 
 app.set('port', process.env.PORT || 3000);
 
+//app.use(cors({origin: http://localhost:4200})) if we want to allow connections only from this port (Angular).
+app.use(cors());
 app.use(morgan('dev'));
 //so my app can parse json
 app.use(express.json());
