@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './components/employee/employee.component';
@@ -10,7 +11,7 @@ import { EmployeeComponent } from './components/employee/employee.component';
     EmployeeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
