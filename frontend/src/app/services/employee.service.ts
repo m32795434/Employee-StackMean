@@ -10,7 +10,14 @@ import { Employee } from '../models/employee';
 })
 export class EmployeeService {
   URL_API = 'http://localhost:3000/api/employees';
-  employees?: Employee[];
+  // we must define Employee propierties.
+  selectedEmployee: Employee = {
+    name: '',
+    office: '',
+    position: '',
+    salary: 0,
+  };
+  employees!: Employee[];
 
   //instantiate the httpClient
   constructor(private http: HttpClient) {}
@@ -19,5 +26,9 @@ export class EmployeeService {
     //or we can use "res as []" in the subscribe of employee.component. We are using both, but's not necesary.
     //return all the employees inside the array. "Get" method on /api/employees.
     return this.http.get<Employee[]>(this.URL_API);
+  }
+
+  createEmployee(employee: Employee) {
+    return this.http.post(this.URL_API, employee);
   }
 }
