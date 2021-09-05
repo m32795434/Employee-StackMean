@@ -16,6 +16,7 @@ export class EmployeeService {
     office: '',
     position: '',
     salary: 0,
+    _id: '',
   };
   employees!: Employee[];
 
@@ -30,5 +31,10 @@ export class EmployeeService {
 
   createEmployee(employee: Employee) {
     return this.http.post(this.URL_API, employee);
+  }
+
+  deleteEmployee(_id: string) {
+    // delete http://localhost:3000/api/employees/_id
+    return this.http.delete(`${this.URL_API}/${_id}`);
   }
 }

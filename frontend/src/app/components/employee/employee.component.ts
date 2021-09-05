@@ -27,12 +27,20 @@ export class EmployeeComponent implements OnInit {
   }
 
   addEmployee(form: NgForm) {
-    this.employeeService.createEmployee(form.value).subscribe(
-      (res) => {
-        this.getEmployees();
-        form.reset();
-      },
-      (err) => console.error(err)
-    );
+    if (confirm('Are you sure you want to create employee?')) {
+      this.employeeService.createEmployee(form.value).subscribe(
+        (res) => this.getEmployees(),
+        (err) => console.error(err)
+      );
+    }
+  }
+
+  deleteEmployee(_id: string) {
+    if (confirm('Are you sure you want to delete this employee?')) {
+      this.employeeService.deleteEmployee(_id).subscribe(
+        (res) => this.getEmployees(),
+        (err) => console.error(err)
+      );
+    }
   }
 }

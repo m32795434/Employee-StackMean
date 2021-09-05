@@ -3,15 +3,20 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
-                <!-- name/position/./.="": synchronizes with de corresponding Employee propierty. -->
-                <!-- at submit, will process, all the "employeeForm", calling at addEmployee -->
+                <!-- name||position,etc="": synchronizes with de corresponding Employee propierty. -->
                 <!-- [(ngModel)] = "employeeService.selectedEmployee": double data binding. -->
                 <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)">
+                    <!-- <input 
+                    type="hidden" 
+                    name="_id" 
+                    #_id="ngModel" 
+                    [(ngModel)]="employeeService.selectedEmployee._id"> -->
                     <div class="form-group">
                         <input 
                         type="text" 
                         class="form-control"
                         name="name" 
+                        #name="ngModel"
                         placeholder="Enter your FullName"
                         [(ngModel)] = "employeeService.selectedEmployee.name"
                         >
@@ -21,6 +26,7 @@
                         type="text" 
                         class="form-control" 
                         name="position"
+                        #name="ngModel"
                         placeholder="Enter your Position"
                         [(ngModel)] = "employeeService.selectedEmployee.position"
                         >
@@ -30,6 +36,7 @@
                         type="text" 
                         class="form-control" 
                         name="office"
+                        #name="ngModel"
                         placeholder="Enter your Office"
                         [(ngModel)] = "employeeService.selectedEmployee.office"
                         >
@@ -39,6 +46,7 @@
                         type="number" 
                         class="form-control" 
                         name="salary"
+                        #name="ngModel"
                         placeholder="Enter your Salary"
                         [(ngModel)]="employeeService.selectedEmployee.salary"
                         >
@@ -46,6 +54,7 @@
                     <button class="btn btn-primary mr-2">
                         Clean
                     </button>
+                    <!-- at Save, will process, all the "#employeeForm", calling at addEmployee -->
                     <button class="btn btn-secondary">
                         Save
                     </button>
@@ -69,7 +78,7 @@
                     <td>{{employee.position}}</td>
                     <td>{{employee.office}}</td>
                     <button class="btn btn-secondary btn-sm"><i class="material-icons">edit</i></button>
-                    <button class="btn btn-danger btn-sm"><i class="material-icons">delete</i></button>
+                    <button class="btn btn-danger btn-sm" (click)="deleteEmployee(employee._id)"><i class="material-icons">delete</i></button>
                     
                 </tr>
             </tbody>
