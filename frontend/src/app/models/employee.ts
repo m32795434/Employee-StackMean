@@ -1,10 +1,10 @@
 export interface Employee {
-  // the last 3 are opcional.
+  // the last 2 are opcional.
+  _id: string;
   name: string;
-  office: string;
   position: string;
+  office: string;
   salary: number;
   createdAt?: string;
   aupdatedAt?: string;
-  _id: string;
 }

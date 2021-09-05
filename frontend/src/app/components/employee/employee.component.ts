@@ -28,15 +28,23 @@ export class EmployeeComponent implements OnInit {
     );
   }
   addEmployee(form: NgForm) {
-    if (confirm('Are you sure you want to create employee?')) {
-      this.employeeService.createEmployee(form.value).subscribe(
-        // it creates the employee, but doesn't call getEmployees(),or resetForm. What's the problem?
-        (res) => {
-          this.getEmployees();
-          this.resetForm(form);
-        },
+    // to determinate, if it's an editing or creating method
+    if (this.employeeService.selectedEmployee._id) {
+      this.employeeService.updateEmployee(form.value).subscribe(
+        (res) => console.log(res),
         (err) => console.error(err)
       );
+    } else {
+      if (confirm('Are you sure you want to create employee?')) {
+        this.employeeService.createEmployee(form.value).subscribe(
+          // it creates the employee, but doesn't call getEmployees(),or resetForm. What's the problem?
+          (res) => {
+            this.getEmployees();
+            form.reset();
+          },
+          (err) => console.error(err)
+        );
+      }
     }
   }
 
@@ -50,13 +58,11 @@ export class EmployeeComponent implements OnInit {
   }
 
   editEmployee(employee: Employee) {
-    console.log(employee);
+    this.employeeService.selectedEmployee = employee;
   }
 
-  //to practice another method
-  resetForm(form?: NgForm) {
-    if (form) {
-      form.reset();
-    }
-  }
+  //to practice another method, and not to use in HTML type="reset", so I can reuse this. But it doesn't work.
+  // resetForm(form: NgForm) {
+  //   form.reset();
+  // }
 }

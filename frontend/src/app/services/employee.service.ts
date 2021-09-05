@@ -12,11 +12,11 @@ export class EmployeeService {
   URL_API = 'http://localhost:3000/api/employees';
   // we must define Employee propierties.
   selectedEmployee: Employee = {
-    name: '',
-    office: '',
-    position: '',
-    salary: 0,
     _id: '',
+    name: '',
+    position: '',
+    office: '',
+    salary: 0,
   };
   //EmployeeComponent.getEmployees() will store data here. Then, we use it in employee.component.html, on a *ngfor
   employees!: Employee[];
@@ -32,6 +32,11 @@ export class EmployeeService {
 
   createEmployee(employee: Employee) {
     return this.http.post(this.URL_API, employee);
+  }
+
+  updateEmployee(employee: Employee) {
+    //put(update) the data stored in http://localhost:3000/api/employees/_id with the data stored in "employee"
+    return this.http.put(`${this.URL_API}/${employee._id}`, employee);
   }
 
   deleteEmployee(_id: string) {
