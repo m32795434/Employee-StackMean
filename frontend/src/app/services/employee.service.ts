@@ -18,6 +18,7 @@ export class EmployeeService {
     salary: 0,
     _id: '',
   };
+  //EmployeeComponent.getEmployees() will store data here. Then, we use it in employee.component.html, on a *ngfor
   employees!: Employee[];
 
   //instantiate the httpClient

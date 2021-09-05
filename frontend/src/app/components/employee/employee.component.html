@@ -6,11 +6,6 @@
                 <!-- name||position,etc="": synchronizes with de corresponding Employee propierty. -->
                 <!-- [(ngModel)] = "employeeService.selectedEmployee": double data binding. -->
                 <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)">
-                    <!-- <input 
-                    type="hidden" 
-                    name="_id" 
-                    #_id="ngModel" 
-                    [(ngModel)]="employeeService.selectedEmployee._id"> -->
                     <div class="form-group">
                         <input 
                         type="text" 
@@ -51,11 +46,11 @@
                         [(ngModel)]="employeeService.selectedEmployee.salary"
                         >
                     </div>
-                    <button class="btn btn-primary mr-2">
+                    <button type="reset" class="btn btn-primary mr-2">
                         Clean
                     </button>
                     <!-- at Save, will process, all the "#employeeForm", calling at addEmployee -->
-                    <button class="btn btn-secondary">
+                    <button type="submit" class="btn btn-secondary">
                         Save
                     </button>
                 </form>
@@ -77,7 +72,7 @@
                     <td>{{employee.name}}</td>
                     <td>{{employee.position}}</td>
                     <td>{{employee.office}}</td>
-                    <button class="btn btn-secondary btn-sm"><i class="material-icons">edit</i></button>
+                    <button class="btn btn-secondary btn-sm"><i class="material-icons" (click)="editEmployee(employee)">edit</i></button>
                     <button class="btn btn-danger btn-sm" (click)="deleteEmployee(employee._id)"><i class="material-icons">delete</i></button>
                     
                 </tr>
