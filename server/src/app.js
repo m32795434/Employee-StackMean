@@ -15,8 +15,10 @@ app.use(cors());
 app.use(morgan('dev'));
 //so my app can parse json
 app.use(express.json());
+
 //so my app can parse urlencoded when data comes from html forms, for example.
-app.use(express.urlencoded({ extended: false }));
+//app.use(express.urlencoded({ extended: false }));
+
 // prefijos y carga de rutas en la app
 app.use("/api/employees" ,require('./routes/employees.routes'));
 app.use("/api/contacto" ,require('./routes/contacto.routes'));

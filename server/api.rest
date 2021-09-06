@@ -4,27 +4,27 @@ POST  http://localhost:3000/api/employees
 Content-Type: application/json
 
 {
-    "name": "Marc Tony",
-    "position": "Jr. developer",
-    "office":"RSS",
-    "salary": "1000"
+    "name": "Tony Stark",
+    "position": "Sr. Developer",
+    "office":"EEUU",
+    "salary": "9000000"
 }
 ###
 GET  http://localhost:3000/api/employees/
 
 ###
-GET  http://localhost:3000/api/employees/6111ca0e6548f125305c8680
+GET  http://localhost:3000/api/employees/61358e221dbd6429e483ae27
 
 
 ###
-DELETE http://localhost:3000/api/employees/6111ad99b112502cc80f85fa
+DELETE http://localhost:3000/api/employees/6112ec8430ce0e22c86bda96
 
 ###
-PUT http://localhost:3000/api/employees/6111b3b9babc5521641ade1e
+PUT http://localhost:3000/api/employees/61358e221dbd6429e483ae27
 Content-Type: application/json
 
 {
-    "name": "Manuel Aubustus"
+    "name": "Tonii Stark"
 }
 
 # -----------------CONTACTO-------------------

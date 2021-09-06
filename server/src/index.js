@@ -2,6 +2,7 @@
 require('./database');
 const app = require('./app');
 
-//arranco el servidor, en el puerto seteado en app.js
-app.listen(app.get('port'));
-console.log ('Server on port', app.get('port'));
+//start the server on port declarated in app.js
+app.listen(app.get('port'), () => {
+    console.log(`server on port ${app.get("port")}`)
+});
