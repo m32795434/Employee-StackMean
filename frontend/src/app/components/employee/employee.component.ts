@@ -21,7 +21,7 @@ export class EmployeeComponent implements OnInit {
   getEmployees() {
     this.employeeService.getEmployees().subscribe(
       (res) => {
-        //we store the data in "employeeService.employees". I must do it better.
+        //we store the data in "EmployeeService.employees". It's an array with ALL the employees. I must do it better.
         this.employeeService.employees = res as [];
       },
       (err) => console.error(err)
@@ -41,6 +41,7 @@ export class EmployeeComponent implements OnInit {
           (res) => {
             this.getEmployees();
             form.reset();
+            console.log(res);
           },
           (err) => console.error(err)
         );
@@ -51,18 +52,16 @@ export class EmployeeComponent implements OnInit {
   deleteEmployee(_id: string) {
     if (confirm('Are you sure you want to delete this employee?')) {
       this.employeeService.deleteEmployee(_id).subscribe(
-        (res) => this.getEmployees(),
+        (res) => {
+          this.getEmployees();
+          console.log(res);
+        },
         (err) => console.error(err)
       );
     }
   }
-
+  // we take the data from the inside of the *ngfor
   editEmployee(employee: Employee) {
     this.employeeService.selectedEmployee = employee;
   }
-
-  //to practice another method, and not to use in HTML type="reset", so I can reuse this. But it doesn't work.
-  // resetForm(form: NgForm) {
-  //   form.reset();
-  // }
 }
