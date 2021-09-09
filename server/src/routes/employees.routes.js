@@ -1,6 +1,6 @@
-//creo un enrutador d express. Un "objeto" con rutas.
+//I build an express router. An "object" with routes.
 const express = require('express');
-//lo ejecuto
+//I define the router.
 const router = express.Router();
 
 
@@ -12,7 +12,6 @@ router.post('/', employeesCtrl.createEmployee);
 router.get('/:id', employeesCtrl.getEmployee);
 router.put('/:id', employeesCtrl.editEmployee);
 router.delete('/:id', employeesCtrl.deleteEmployee);
-// router.post('/contacto', employeesCtrl.createContacto);
 
-//exporto el enrutador
+
 module.exports = router;

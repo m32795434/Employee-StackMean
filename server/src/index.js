@@ -1,4 +1,4 @@
-//requiero la DB y luego toda la lógica del server.
+// I require the DB and all the server logic.
 require('./database');
 const app = require('./app');
 

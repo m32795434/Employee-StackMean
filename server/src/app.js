@@ -1,13 +1,13 @@
 //LOGICA DEL SERVIDOR.
 const express = require('express'); 
-// middelware. ver peticiones http que van llegando al server. ej:GET /404 0.261 ms - 139
+// middelware.To see server http requests(PUT, POST, GET, DELETE). ej:GET /404 0.261 ms - 139
 const morgan = require('morgan');
 //to accept requests from other origins.
 const cors = require('cors');
 
 
 const app = express();
-// process.env.PORT: si en el sistema Op hay un puerto definido para esta app, lo usa, si no, usa el 3000 
+// process.env.PORT: if in the O.S. there is a port defined for this app, it uses that; if not, it uses the 3000 
 app.set('port', process.env.PORT || 3000);
 
 //app.use(cors({origin: http://localhost:4200})) if we want to allow connections only from this port (Angular).

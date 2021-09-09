@@ -4,9 +4,9 @@ const mongoose = require("mongoose");
 const URL = "mongodb://localhost/mean-employees";
 
 mongoose
-    // a traves del protocolo de MongoDB nos conectamos a la DB
+    //we conect to the DB using the URL
     .connect(URL,{
-        // elimino mensajes de error de advertencia de MongoDB
+        //we delete the warnigns messages
         useUnifiedTopology: true,
         useNewUrlParser: true,
         //without this property, findByIdAndUpdate() will not work
