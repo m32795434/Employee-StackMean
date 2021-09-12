@@ -1,4 +1,5 @@
 //LOGICAL CONTROLLER FUNCTIONS 
+
 const employeeCtrl = {}
 const Employee = require('../models/Employee')
 
