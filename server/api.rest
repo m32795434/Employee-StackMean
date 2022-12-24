@@ -4,8 +4,8 @@ POST  http://localhost:3000/api/employees
 Content-Type: application/json
 
 {
-    "name": "Tony Stark",
-    "position": "Sr. Developer",
+    "name": "Tony McMircha",
+    "position": "Sr. Sr. Developer",
     "office":"EEUU",
     "salary": "9000000"
 }
