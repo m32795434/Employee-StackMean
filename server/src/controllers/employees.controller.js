@@ -5,10 +5,13 @@ const Employee = require('../models/Employee')
 
 //req: api-rest client request //employeeCtrl's method name: getEmployees
 employeeCtrl.getEmployees = async (req, res, next)=> {
-    //employees: an array of all the objetcs with the employees data in DB
-    //we apply the asyncronous "find" method with de Employee model.
-    const employees =  await Employee.find()
-    res.json(employees)
+    try {
+        const employees = await Employee.find();
+        res.json(employees);
+        console.log("employess:", employees)
+    } catch (error) {
+        res.status(500).json({ error: "Error al obtener los empleados" });
+    }
 }
 
 employeeCtrl.createEmployee = async (req, res, next) => {

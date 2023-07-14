@@ -20,23 +20,24 @@ export class EmployeeComponent implements OnInit {
 
   getEmployees() {
     this.employeeService.getEmployees().subscribe(
-      (res) => {
-        //we store the data in "EmployeeService.employees". It's an array with ALL the employees. I must do it better.
-        this.employeeService.employees = res as [];
-      },
-      (err) => console.error(err)
+      {
+        next:(res) => {
+          this.employeeService.employees = res as [];//I think a better approach would be using a Subject or a setter. Not this way.💡 
+        },
+        error:(err) => console.error(err)
+      }
     );
   }
   addEmployee(form: NgForm) {
     // to determinate, if it's an editing or creating method
     if (this.employeeService.selectedEmployee._id) {
-      this.employeeService.updateEmployee(form.value).subscribe(
+      this.employeeService.updateEmployee(form.value).subscribe(//this is deprecated, check in the future!!🎯
         (res) => console.log(res),
         (err) => console.error(err)
       );
     } else {
       if (confirm('Are you sure you want to create employee?')) {
-        this.employeeService.createEmployee(form.value).subscribe(
+        this.employeeService.createEmployee(form.value).subscribe(//this is deprecated, check in the future!!🎯
           // it creates the employee, but doesn't call getEmployees(),or resetForm. What's the problem?
           (res) => {
             this.getEmployees();
@@ -51,7 +52,7 @@ export class EmployeeComponent implements OnInit {
 
   deleteEmployee(_id: string) {
     if (confirm('Are you sure you want to delete this employee?')) {
-      this.employeeService.deleteEmployee(_id).subscribe(
+      this.employeeService.deleteEmployee(_id).subscribe(//this is deprecated, check in the future!!🎯
         (res) => {
           this.getEmployees();
           console.log(res);

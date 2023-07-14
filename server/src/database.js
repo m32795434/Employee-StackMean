@@ -1,7 +1,7 @@
 //DATABASE CONEXION
 
 const mongoose = require("mongoose");
-const URL = "mongodb://localhost/mean-employees";
+const URL = "mongodb://127.0.0.1:27017/mean-employees";
 
 mongoose
     //we conect to the DB using the URL
