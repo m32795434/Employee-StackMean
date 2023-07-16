@@ -10,14 +10,8 @@ import { Employee } from '../models/employee';
 })
 export class EmployeeService {
   URL_API = 'http://localhost:3000/api/employees';
-  // we must define Employee propierties.
-  selectedEmployee: Employee = {
-    _id: '',
-    name: '',
-    position: '',
-    office: '',
-    salary: 0,
-  };
+
+  selectedEmployee: Employee = emptyEmployee;
   //EmployeeComponent.getEmployees() will store al the employees here. Then, we use it in employee.component.html, on a *ngfor
   employees!: Employee[];
 
@@ -44,3 +38,10 @@ export class EmployeeService {
     return this.http.delete(`${this.URL_API}/${_id}`);
   }
 }
+const emptyEmployee={
+  _id: '',
+  name: '',
+  position: '',
+  office: '',
+  salary: 0,
+};
